@@ -1,4 +1,10 @@
-library(tidyverse)
+library(dplyr)
+library(ggplot2)
+library(magrittr)
+library(tidyr)
+library(stringr)
+
+
 set.seed(50960)
 sample_size <- 100
 
