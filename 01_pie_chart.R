@@ -10,9 +10,9 @@ ggplot(data_categories_summarised, aes(x = "", y = value, fill = animal)) +
   )
 
 # Bar chart
-ggplot(data_categories, aes(x = animal)) + 
-  geom_bar(aes(y = (..count..) / sum(..count..)), fill = 'royalblue4') +
-  scale_y_continuous(labels = scales::percent_format(accuracy = 1), expand = c(0, 0), limits = c(0, 0.31)) +
+ggplot(data_categories_summarised, aes(x = animal, y = value)) + 
+  geom_col(fill = 'royalblue4') +
+  scale_y_continuous(labels = scales::percent_format(accuracy = 1), expand = c(0, 0), limits = c(0, max(data_categories_summarised$value) + 0.01)) +
   labs(title = element_text("What is your favourite animal?")) +
   ylab("Percent of respondents") +
   theme(
